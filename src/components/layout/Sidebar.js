@@ -1,19 +1,19 @@
 import React from 'react';
-import { FaRegCalendar, FaRegCalendarAlt, FaChevronDown,  } from 'react-icons/fa'
+import { FaRegCalendar, FaRegCalendarAlt, FaChevronDown, FaInbox  } from 'react-icons/fa'
 
 export const Sidebar = () => {
     return (
         <div className="sidebar" data-testid="sidebar">
             <ul className="sidebar__generic">
-                <li>
-                    <span><FaChevronDown /></span>
+                <li data-testid='inbox' className='inbox'>
+                    <span><FaInbox /></span>
                     <span>Inbox</span>
                 </li>
-                <li>
+                <li data-testid='today' className='today'>
                     <span><FaRegCalendar /></span>
                     <span>Today</span>
                 </li>
-                <li>
+                <li data-testid='next_7' className='next_7'>
                     <span><FaRegCalendarAlt /></span>
                     <span>Next 7 days</span>
                 </li>
