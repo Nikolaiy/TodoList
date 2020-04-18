@@ -205,16 +205,12 @@ nav {
     }
 
     li {
-        padding-left: 10px;
-        padding-right: 15px;
-
         &:hover .sidebar__project-delete {
-            display: block;
+            display: flex;
         }
     }
 
     &__project {
-        padding: 5px 0;
         cursor: pointer;
 
         &-delete {
@@ -266,12 +262,12 @@ nav {
         padding-left: 3px;
     }
 
-    &__projects {
+    &__project {
         @include va('left')
     }
 
     &__dot {
-        margin-right: 1px;
+        margin-right: 10px;
         font-size: 30px;
     }
 
