@@ -22,7 +22,7 @@ export const IndividualProject = ({ project }) => {
 
     return (
         <>
-            <span className='sidebar__dot'>"</span>
+            <span className='sidebar__dot'>·</span>
             <span className='sidebar__project-name'>{project.name}</span>
             <span className='sidebar__project-delete' data-testid='delete-project' role='button' onKeyDown={() => setShowConfirm(!showConfirm)}
             onClick={() => setShowConfirm(!showConfirm)}>
@@ -33,10 +33,8 @@ export const IndividualProject = ({ project }) => {
                             <p>Are you sure you want to delete this project?</p>
                             <button type='button' onClick={() => deleteProject(project.docId)}>
                                 Delete
-                                <span onClick={() => setShowConfirm(!showConfirm)}>
-                                    Cancel
-                                </span>
                             </button>
+                            <span onClick={() => setShowConfirm(!showConfirm)}>Cancel</span>
                         </div>
                     </div>
                 )}

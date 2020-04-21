@@ -46,8 +46,6 @@ export const useTasks = selectedProject => {
     return { tasks, archivedTasks };
 };
 
-// const selectedProject = 1;
-// const { tasks, archivedTasks } = useTasks(selectedProject)
 
 export const useProjects = () => {
     const [projects, setProjects] = useState([]);
