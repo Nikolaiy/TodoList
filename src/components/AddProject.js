@@ -9,7 +9,7 @@ export const AddProject = ({ shouldShow = false }) => {
     const [projectName, setProjectName] = useState('');
 
     const projectId = generatePushId();
-    const { setProjects } = useProjectsValue();
+    const { projects, setProjects } = useProjectsValue();
 
     const addProject = () => 
     projectName && firebase
@@ -21,7 +21,7 @@ export const AddProject = ({ shouldShow = false }) => {
         userId: 'yAL3TZxvbdfda'
     })
     .then(() => {
-        setProjects([]);
+        setProjects([...projects]);
         setProjectName('');
         setShow(false);
     });
@@ -39,8 +39,8 @@ export const AddProject = ({ shouldShow = false }) => {
                         placeholder='Name your project'
                     />
                     <button
-                        className='add-project__cubmit'
-                        data-testid='add-project__cubmit'
+                        className='add-project__submit'
+                        data-testid='add-project__submit'
                         type="button"
                         onClick={() => addProject()}
                     >

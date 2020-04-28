@@ -3,8 +3,8 @@ import {firebase} from '../firebase';
 import moment from 'moment'
 import { FaRegListAlt, FaRegCalendarAlt, FaCalendarAlt } from 'react-icons/fa'
 import { useSelectedProjectValue } from '../context';
-import { ProjectOverlay } from '../components/ProjectOverlay'
-import { TaskDate } from '../components/TaskDate'
+import { ProjectOverlay } from './ProjectOverlay'
+import { TaskDate } from './TaskDate'
 
 export const AddTask = ({
     showAddTaskMain = true,
@@ -49,13 +49,13 @@ export const AddTask = ({
                     setProject('')
                     setShowMain('')
                     setShowMain('')
-                    setShowProjectOverlay('')
+                    setShowProjectOverlay(false)
                 })
         );
     };
 
     return (
-        <div className={setShowQuickAddTask ? 'add-task add-task__overlay' : 'add-task'}
+        <div className={showQuickAddTask ? 'add-task add-task__overlay' : 'add-task'}
             data-testid='add-task-comp'>
                 {showAddTaskMain && (
                     <div className='add-task__shallow'
@@ -68,7 +68,7 @@ export const AddTask = ({
 
             {(showMain || showQuickAddTask) && (
                 <div className='add-task__main' data-testid='add-task-main'>
-                    {showAddTaskMain && (
+                    {showQuickAddTask && (
                         <>
                         <div data-testid='quick-add-task'>
                             <h2 className='header'>Quick Add Task</h2>
@@ -88,7 +88,7 @@ export const AddTask = ({
                             showTaskDate={showTaskDate} 
                             setShowTaskDate={setShowTaskDate} />
                     <input className='add-task__content' data-testid='add-task-content' type='text' value={task} onChange={e => setTask(e.target.value)}/>
-                    <button className='add-task__submit' data-testid='add-task' type='button' onClick={() => addTask()}> Add Task </button> 
+                    <button className='add-task__submit' data-testid='add-task' type='button' onClick={() => showQuickAddTask ? addTask() && setShowQuickAddTask(false) : addTask()}> Add Task </button> 
                     {!showQuickAddTask && (
                         <span className='add-task__cancel' data-testid='add-task-main-cancel' onClick={() => { 
                             setShowMain(false) 

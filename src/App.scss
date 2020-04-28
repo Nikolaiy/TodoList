@@ -96,7 +96,12 @@ $generic-bg: #db4c3f;
     color: #333;
     padding-top: 10px;
     padding-bottom: 10px;
-    font-size: 14px;  
+    font-size: 14px; 
+    cursor: pointer;
+    
+    &:hover {
+        background-color: #f9f9f9;
+    }
 }
 
 @mixin mq($from) {
@@ -349,7 +354,6 @@ nav {
         width: 200px;
         padding: 10px;
         top: 10px;
-        right: 0;
         background-color: #fff;
 
         p {
@@ -361,7 +365,7 @@ nav {
         }
 
         button {
-            @include btn(50px);
+            @include btn('50px');
         }
 
         span {
@@ -451,8 +455,9 @@ nav {
         top: 0;
         left: 0;
         width: 100%;
+        height: 100%;
         height: calc(100vh);
-        z-index: 1000;
+        z-index: 2000;
         transition: opacity 0.2s ease-in;
 
         .add-task__main {
@@ -518,7 +523,7 @@ nav {
     }
 
     &__submit {
-        @include btn(90px);
+        @include btn('90px');
     }
 }
 
@@ -594,7 +599,7 @@ nav {
     }
 
     &__submit {
-        @include btn(100px);
+        @include btn('100px');
     }
 
     &__cancel {

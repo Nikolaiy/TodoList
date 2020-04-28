@@ -39,7 +39,8 @@ export const Header = ({ darkMode, setDarkMode }) => {
                 showAddTaskMain = {false}
                 showShouldMain = {showShouldMain}
                 showQuickAddTask = {showQuickAddTask}
-                setShowQuickAddTask = {setShowQuickAddTask}/>
+                setShowQuickAddTask = {setShowQuickAddTask}
+                /> 
         </header>
     );
 };
