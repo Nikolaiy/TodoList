@@ -430,7 +430,64 @@ nav {
 // Add Task 
 
 .add-task {
+    &__overlay {
+        background: rgba(102, 102, 102, 0.5);
+        position: absolute;
+        margin: auto;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: calc(100vh);
+        z-index: 1000;
+        transition: opacity 0.2s ease-in;
 
+        .add-task__main {
+            overflow: visible;
+            margin-bottom: 20px;
+            margin-top: 5px;
+            border-radius: 5px;
+            background-color: #fff;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            padding: 20px 30px;
+            transform: translate(-50%, -50%);
+
+            .header {
+                font-size: 13px;
+                margin-bottom: 20px;
+                float: left;
+            }
+        }
+
+        .add-task__cancel-x {
+            cursor: pointer;
+            color: gray;
+            font-weight: bold;
+            font-size: 12px;
+            margin-top: 10px;
+        }
+    }
+
+    &__main {
+        position: relative;
+
+    }
+
+    &__project, &__date {
+        cursor: pointer;
+        float: right;
+        color: gray;
+        margin: 20px 10px;
+    }
+
+    &__projact {
+        margin-right: 0;
+    }
+
+    &__content {
+        width: 100%;
+    }
 }
 
 .add-task__plus, .add-project__plus {
