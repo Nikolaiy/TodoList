@@ -22,6 +22,12 @@ export const Header = ({ darkMode, setDarkMode }) => {
                                 setShowQuickAddTask(true);
                                 setShowShouldMain(true);
                             }}
+                            onKeyDown={() => {
+                                setShowQuickAddTask(true);
+                                setShowShouldMain(true);
+                            }}
+                            role='button'
+                            tabIndex={0}
                             >
                             +
                         </li>

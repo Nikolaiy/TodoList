@@ -1,10 +1,10 @@
 import React, {useState} from 'react';
 import {firebase} from '../firebase';
-import moment from 'moment'
-import { FaRegListAlt, FaRegCalendarAlt, FaCalendarAlt } from 'react-icons/fa'
+import moment from 'moment';
+import { FaRegListAlt, FaRegCalendarAlt, FaCalendarAlt } from 'react-icons/fa';
 import { useSelectedProjectValue } from '../context';
-import { ProjectOverlay } from './ProjectOverlay'
-import { TaskDate } from './TaskDate'
+import { ProjectOverlay } from './ProjectOverlay';
+import { TaskDate } from './TaskDate';
 
 export const AddTask = ({
     showAddTaskMain = true,
@@ -26,9 +26,9 @@ export const AddTask = ({
         let collatedDate = '';
 
         if (projectId === 'TODAY') {
-            collatedDate = moment().format('DD/MM/YYYY');
+            collatedDate = moment().format('DD-MM-YYYY');
         } else if (projectId === 'NEXT_7') {
-            collatedDate = moment().add(7, 'days').format('DD-MM-YYYY')
+            collatedDate = moment().add(7, 'days').format('DD-MM-YYYY');
         }
 
         return (
@@ -45,11 +45,11 @@ export const AddTask = ({
                     userId: 'yAL3TZxvbdfda',
                 })
                 .then(() => {
-                    setTask('')
-                    setProject('')
-                    setShowMain('')
-                    setShowMain('')
-                    setShowProjectOverlay(false)
+                    setTask('');
+                    setProject('');
+                    setShowMain('');
+                    setShowMain('');
+                    setShowProjectOverlay(false);
                 })
         );
     };
@@ -75,8 +75,8 @@ export const AddTask = ({
                             <span className='add-task__cancel-x' data-testid='add-task-quick-cancel'
                                 onClick = {() => {
                                     setShowMain(false);
-                                    setShowProjectOverlay(false)
-                                    setShowQuickAddTask(false)
+                                    setShowProjectOverlay(false);
+                                    setShowQuickAddTask(false);
                                 }}>X</span>
                         </div>
                         </>

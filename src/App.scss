@@ -224,13 +224,27 @@ nav {
     }
 
     li {
+        padding-left: 10px;
+        padding-right: 15px;
+
         &:hover .sidebar__project-delete {
             display: flex;
         }
     }
 
     &__project {
+        padding: 5px 0;
         cursor: pointer;
+
+        button {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            background-color: transparent;
+            border: none;
+            outline: none;
+        }
 
         &-delete {
             margin-left: auto;
@@ -238,6 +252,7 @@ nav {
 
             svg {
                 color: #cacaca;
+                margin-right: 10px;
             }
         }
 
@@ -353,7 +368,8 @@ nav {
         z-index: 99;
         width: 200px;
         padding: 10px;
-        top: 10px;
+        top: 23px;
+        right: 0;
         background-color: #fff;
 
         p {
@@ -366,6 +382,7 @@ nav {
 
         button {
             @include btn('50px');
+            width: 80px;
         }
 
         span {
@@ -485,6 +502,7 @@ nav {
             font-weight: bold;
             font-size: 12px;
             margin-top: 10px;
+            float: right;
         }
     }
 
@@ -561,6 +579,7 @@ nav {
 
             svg {
                 fill: grey;
+                margin-left: 10px;
             }
         }
     }
@@ -571,9 +590,13 @@ nav {
 .project-overlay {
     @include box-overlay();
     background-color: #fff;
+    width: 100%;
+    right: 0;
 
     &__list li {
         @include task-item();
+        padding-left: 10px;
+        border-bottom: 1px solid #f1f1f1;
     }
 }
 

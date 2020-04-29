@@ -14,7 +14,8 @@ export const TaskDate = ({
                     <li
                         onClick={() => {
                             setShowTaskDate(false);
-                            setTaskDate(moment().format('DD-MM-YYYY'));
+                            setTaskDate(moment()
+                                .format('DD-MM-YYYY'));
                         }}
                         data-testid='task-date-overlay'
                     >
