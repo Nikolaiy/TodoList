@@ -17,25 +17,30 @@ export const Header = ({ darkMode, setDarkMode }) => {
                     <ul>
                         <li 
                             data-testind='quick-add-task-action' 
-                            classNema='setting__add'
-                            onClick={() => {
-                                setShowQuickAddTask(true);
-                                setShowShouldMain(true);
-                            }}
-                            onKeyDown={() => {
-                                setShowQuickAddTask(true);
-                                setShowShouldMain(true);
-                            }}
-                            role='button'
-                            tabIndex={0}
+                            className='setting__add'
                             >
-                            +
+                            <button 
+                                type="button"
+                                onClick={() => {
+                                    setShowQuickAddTask(true);
+                                    setShowShouldMain(true);
+                                }}
+                                onKeyDown={() => {
+                                    setShowQuickAddTask(true);
+                                    setShowShouldMain(true);
+                            }}>
+                                +
+                            </button>
                         </li>
                         <li 
                             data-testind='dark-mode-action' 
-                            classNema='settings__darkmode'
-                            onClick={() => setDarkMode(!darkMode)}>
-                            <FaListUl />
+                            className='settings__darkmode'>
+                            <button
+                                type='button'
+                                onClick={() => setDarkMode(!darkMode)}
+                                onKeyDown={() => setDarkMode(!darkMode)}>
+                                    <FaListUl />
+                            </button>
                         </li>
                     </ul>
                 </div>

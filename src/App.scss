@@ -82,6 +82,14 @@ $generic-bg: #db4c3f;
     cursor: pointer;
 }
 
+@mixin btn-transparent() {
+    background-color: transparent;
+    border: none;
+    color: #fff;
+    outline: none;
+    cursor: pointer;
+}
+
 @mixin cancel() {
     color: #555;
     cursor: pointer;
@@ -194,11 +202,22 @@ nav {
                     &.setting__add {
                         margin-right: 15px;
                         font-size: 30px;
+
+                        button {
+                            @include btn-transparent()
+                        }
                     }
 
-                    &.settings__dark-mode svg {
-                        width: 20px;
-                        height: 20px;
+                    &.settings__darkmode {
+
+                        button {
+                            @include btn-transparent()
+                        }
+
+                        svg {
+                            width: 20px;
+                            height: 20px;
+                        }
                     }
                 }
             }
@@ -341,14 +360,22 @@ nav {
             line-height: 1.50;
             font-size: 15px;
 
-            span:first-of-type {
-                margin-right: 10px;
+            div {
+                display: flex;
+                align-items: center;
+                outline: none;
 
-                svg {
-                    width: 18px;
-                    height: 18px;
-                    color: #555;
-                }
+                span:first-of-type {
+                    display: flex;
+                    margin-right: 10px;
+        
+                    svg {
+                        width: 18px;
+                        height: 18px;
+                        color: #555;
+                    }
+            }
+
             }
             &.active, &:hover {
                 font-weight: bold;
@@ -595,8 +622,13 @@ nav {
 
     &__list li {
         @include task-item();
-        padding-left: 10px;
+        padding: 0;
         border-bottom: 1px solid #f1f1f1;
+
+        div:nth-child(1) {
+            width: 100%;
+            padding: 10px;
+        }
     }
 }
 
