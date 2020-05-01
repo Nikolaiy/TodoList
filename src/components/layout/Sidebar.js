@@ -16,6 +16,7 @@ export const Sidebar = () => {
             <ul className="sidebar__generic">
                 <li data-testid='inbox' className={active === 'inbox' ? 'active' : undefined}>
                     <div
+                        aria-label='Show Inbox Task'
                         onClick={() => {setActive('inbox'); setSelectedProject('INBOX');}}
                         onKeyDown={() => {setActive('inbox'); setSelectedProject('INBOX');}}
                         role='button'
@@ -28,6 +29,7 @@ export const Sidebar = () => {
                 </li>
                 <li data-testid='today' className={active === 'today' ? 'active' : undefined}>
                     <div
+                        aria-label="Show Today's task"
                         onClick={() => {setActive('today'); setSelectedProject('TODAY');}}
                         onKeyDown={() => {setActive('today'); setSelectedProject('TODAY');}}
                         role='button'
@@ -38,6 +40,7 @@ export const Sidebar = () => {
                 </li>
                 <li data-testid='next_7' className={active === 'next_7' ? 'active' : undefined}>
                     <div 
+                        aria-label='Show task for the Next 7 days'
                         onClick={() => {setActive('next_7'); setSelectedProject('NEXT_7');}}
                         onKeyDown={() => {setActive('next_7'); setSelectedProject('NEXT_7');}}
                         role='button'
@@ -48,11 +51,17 @@ export const Sidebar = () => {
                 </li>
             </ul>
 
-            <div className="sidebar__middle" onClick={() => {setShowProjects(!showProjects)}} onKeyDown={() => {setShowProjects(!showProjects)}} role='button' tabIndex={0}>
-                <span><FaChevronDown 
-                        className={ !showProjects ? 'hidden-projects' : undefined }
-                /></span>
-                <h2>Projects</h2>
+            <div className="sidebar__middle" 
+                aria-label='Show/hide projects'
+                onClick={() => {setShowProjects(!showProjects)}} 
+                onKeyDown={() => {setShowProjects(!showProjects)}} 
+                role='button' 
+                tabIndex={0}>
+                    <span>
+                        <FaChevronDown className={ !showProjects ? 'hidden-projects' : undefined }/>
+                    </span>
+                    
+                    <h2>Projects</h2>
             </div>
 
             <ul className="sidebar__projects">

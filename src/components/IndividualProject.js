@@ -24,8 +24,12 @@ export const IndividualProject = ({ project }) => {
         <>
             <span className='sidebar__dot'>·</span>
             <span className='sidebar__project-name'>{project.name}</span>
-            <span className='sidebar__project-delete' data-testid='delete-project' role='button' tabIndex={0} onKeyDown={() => setShowConfirm(!showConfirm)}
-            onClick={() => setShowConfirm(!showConfirm)}>
+            <span className='sidebar__project-delete' data-testid='delete-project' 
+                aria-label='Confirm deletion of rpoject'
+                role='button' 
+                tabIndex={0} 
+                onKeyDown={() => setShowConfirm(!showConfirm)}
+                onClick={() => setShowConfirm(!showConfirm)}>
                 <FaTrashAlt />
                 {showConfirm && (
                     <div className='project-delete-modal'>
@@ -35,6 +39,7 @@ export const IndividualProject = ({ project }) => {
                                 Delete
                             </button>
                             <span 
+                                aria-label='Cancel adding project, do not delete'
                                 onClick={() => setShowConfirm(!showConfirm)}
                                 onKeyDown={() => setShowConfirm(!showConfirm)}
                                 role='button'

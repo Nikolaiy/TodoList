@@ -16,13 +16,14 @@ export const ProjectOverlay = ({
                     {projects.map(project => (
                         <li key={project.projectId} data-testid='project-overlay-action'>
                             <div
+                                aria-label='Select the task project'
                                 onClick={() => {
                                     setProject(project.projectId);
-                                    setShowProjectOverlay(false)
+                                    setShowProjectOverlay(false);
                                 }}
                                 onKeyDown={() => {
                                     setProject(project.projectId);
-                                    setShowProjectOverlay(false)
+                                    setShowProjectOverlay(false);
                                 }}
                                 role='button'
                                 tabIndex={0}>

@@ -60,6 +60,7 @@ export const AddTask = ({
                 {showAddTaskMain && (
                     <div className='add-task__shallow'
                         data-testid='show-main-action'
+                        aria-label='Add task'
                         onClick={() => {setShowMain(!showMain)}}
                         onKeyDown={() => {setShowMain(!showMain)}}
                         role='button'
@@ -76,6 +77,7 @@ export const AddTask = ({
                         <div data-testid='quick-add-task'>
                             <h2 className='header'>Quick Add Task</h2>
                             <span className='add-task__cancel-x' data-testid='add-task-quick-cancel'
+                                aria-label='Cancel adding task'
                                 onClick = {() => {
                                     setShowMain(false);
                                     setShowProjectOverlay(false);
@@ -97,10 +99,11 @@ export const AddTask = ({
                     <TaskDate setTaskDate={setTaskDate} 
                             showTaskDate={showTaskDate} 
                             setShowTaskDate={setShowTaskDate} />
-                    <input className='add-task__content' data-testid='add-task-content' type='text' value={task} onChange={e => setTask(e.target.value)}/>
+                    <input aria-label='Enter your task' className='add-task__content' data-testid='add-task-content' type='text' value={task} onChange={e => setTask(e.target.value)}/>
                     <button className='add-task__submit' data-testid='add-task' type='button' onClick={() => showQuickAddTask ? addTask() && setShowQuickAddTask(false) : addTask()}> Add Task </button> 
                     {!showQuickAddTask && (
                         <span className='add-task__cancel' data-testid='add-task-main-cancel' 
+                            aria-label='Cancel adding a task'
                             onClick={() => { 
                                 setShowMain(false) 
                                 setShowProjectOverlay(false)}}
