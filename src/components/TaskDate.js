@@ -11,7 +11,7 @@ export const TaskDate = ({
         showTaskDate && 
         ( <div className='task-date' data-testid='task-date-overlay'>
                 <ul className='task-date__list'>
-                    <li data-testid='task-date-overlay'>
+                    <li data-testid='task-date-today'>
                         <div 
                             aria-label='Select today as the task date'
                             onClick={() => {

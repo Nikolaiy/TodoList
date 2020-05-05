@@ -61,6 +61,30 @@ describe('<AddTask />', () => {
             expect(queryByTestId('add-task-main')).toBeTruthy();
 
             fireEvent.click(queryByTestId('add-project-overlay'));
+            expect(queryByTestId('project-overlay')).toBeTruthy();
         })
+
+        it('render the <AddTask /> task date overlay when clicked', () => {
+            const { queryByTestId } = render(<AddTask showAddTaskMain/>);
+
+            fireEvent.click(queryByTestId('show-main-action'));
+            expect(queryByTestId('add-task-main')).toBeTruthy();
+
+            fireEvent.click(queryByTestId('add-task-date-overlay'));
+            expect(queryByTestId('task-date-overlay')).toBeTruthy();
+        })
+
+        it('hides the <AddTask /> main when cancel is clicked', () => {
+            const { queryByTestId } = render(<AddTask showAddTaskMain/>);
+
+            fireEvent.click(queryByTestId('show-main-action'));
+            expect(queryByTestId('add-task-main')).toBeTruthy();
+
+            fireEvent.click(queryByTestId('add-task-main-cancel'));
+            expect(queryByTestId('add-task-main')).toBeFalsy();
+        })
+
+       
+        
     });
 });
