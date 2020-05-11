@@ -84,7 +84,43 @@ describe('<AddTask />', () => {
             expect(queryByTestId('add-task-main')).toBeFalsy();
         })
 
-       
+        // it('renders <AddTask /> for quick add task and then click cancel', () => {
+        //     const showQuickAddTask = true;
+        //     const setShowQuickAddTask = jest.fn(() => !showQuickAddTask );
+
+        //     const { queryByTestId } = render(<AddTask 
+        //         setShowQuickAddTask={setShowQuickAddTask}
+        //         showQuickAddTask={true} />);
+
+        //     fireEvent.click(queryByTestId('show-main-action'));
+        //     expect(queryByTestId('add-task-main').toBeTruthy());
+
+        //     fireEvent.click(queryByTestId('add-task-quick-cancel'));
+        //     expect(setShowQuickAddTask).toHaveBeenCalled();
+        // });
+
+        it('render <AddTask /> and adds a task to the inbox and clears state', () => {
+            useSelectedProjectValue.mockImplementation(() => {
+                selectedProject: 'TODAY'
+            });
+
+            const {queryByTestId } = render (
+                <AddTask showQuickAddTask = {false} />
+            );
+            fireEvent.click(queryByTestId('show-main-action'));
+            expect(queryByTestId('add-task-content')).toBeTruthy();
+
+            fireEvent.change(queryByTestId('add-task-content'), {
+                target: { value: 'I am a new task and I am amazing!'}
+            });
+            expect(queryByTestId('add-task-content').value).toBe(
+                'I am a new task and I am amazing!'
+            );
+
+            fireEvent.click(queryByTestId('add-task'));
+            expect(queryByTestId('add-task-main')).toBeTruthy();
+        });
+        
         
     });
 });
