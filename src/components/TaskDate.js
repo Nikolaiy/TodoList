@@ -11,7 +11,7 @@ export const TaskDate = ({
         showTaskDate && 
         ( <div className='task-date' data-testid='task-date-overlay'>
                 <ul className='task-date__list'>
-                    <li data-testid='task-date-today'>
+                    <li>
                         <div 
                             aria-label='Select today as the task date'
                             onClick={() => {
@@ -24,6 +24,7 @@ export const TaskDate = ({
                                 setTaskDate(moment()
                                     .format('DD-MM-YYYY'));
                             }}
+                            data-testid='task-date-today'
                             role='button'
                             tabIndex={0}>
                                 <span>
@@ -32,7 +33,7 @@ export const TaskDate = ({
                                 <span>Today</span>
                         </div>
                     </li>
-                    <li data-testid='task-date-tomorrow'>
+                    <li>
                         <div 
                             aria-label='Select tomorrow as the task date'
                             onClick={() => {
@@ -47,6 +48,7 @@ export const TaskDate = ({
                                     .add(1, 'day')
                                     .format('DD-MM-YYYY'));
                             }}
+                            data-testid='task-date-tomorrow'
                             role='button'
                             tabIndex={0}>
                                 <span>
@@ -55,7 +57,7 @@ export const TaskDate = ({
                                 <span>Tomorrow</span>
                         </div>
                     </li>
-                    <li data-testid='task-date-next-week'>
+                    <li>
                         <div 
                             aria-label='Select next week as the task date'
                             onClick={() => {
@@ -70,6 +72,7 @@ export const TaskDate = ({
                                     .add(7, 'day')
                                     .format('DD-MM-YYYY'));
                             }}
+                            data-testid='task-date-next-week'
                             role='button'
                             tabIndex={0}
                         >
